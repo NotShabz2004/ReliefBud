@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Login - ReliefBud</title>
+    <link rel="stylesheet" href="css/doc.css">
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+
+    <img src="images/rembg.png" class="logo-left">
+
+    <div class="card">
+
+        <h1>Doctor Portal</h1>
+        <p class="subtitle">Access your patient queue</p>
+
+        <form onsubmit="handleDoctorLogin(event)">
+
+            <label>Email:</label>
+            <input id="doctorEmail" type="email" required>
+
+            <label>Password:</label>
+            <input id="doctorPassword" type="password" required>
+
+            <button type="submit" class="role-btn teal">Login</button>
+
+        </form>
+
+        <p class="back-link">
+            <a href="index.html">← Back to Home</a>
+        </p>
+
+    </div>
+
+    <script>
+        async function handleDoctorLogin(event) {
+            event.preventDefault();
+
+            try {
+                const email = document.getElementById('doctorEmail').value;
+                const password = document.getElementById('doctorPassword').value;
+
+                // TODO: Implement actual Cognito doctor signin via auth.js
+                // Verify user is in 'doctor' group before granting dashboard access
+                const result = await window.Auth.doctorSignIn(email, password);
+
+                if (result.success && result.userGroup === 'doctor') {
+                    // Store auth token in sessionStorage
+                    sessionStorage.setItem('authToken', result.token);
+                    sessionStorage.setItem('userId', result.userId);
+                    sessionStorage.setItem('userGroup', result.userGroup);
+
+                    // Redirect to doctor dashboard
+                    window.location.href = 'doc-dashboard.html';
+                } else {
+                    alert('Doctor access denied: ' + (result.message || 'Invalid credentials'));
+                }
+            } catch (err) {
+                console.error('Login error:', err);
+                alert('Error during login: ' + err.message);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

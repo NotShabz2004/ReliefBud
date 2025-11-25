@@ -1,0 +1,151 @@
+/* Doctor Portal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 120px;
+    height: auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 16px;
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0da5c0;
+    box-shadow: 0 0 0 3px rgba(13, 165, 192, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Button Styles */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #0da5c0;
+    color: white;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0b8fa8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(13, 165, 192, 0.4);
+}
+
+button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Links */
+a {
+    color: #0da5c0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .card {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        width: 100%;
+    }
+}

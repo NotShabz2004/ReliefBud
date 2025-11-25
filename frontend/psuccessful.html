@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Successful - ReliefBud</title>
+    <link rel="stylesheet" href="css/patient.css">
+</head>
+
+<body>
+
+    <img src="images/rembg.png" class="logo-left">
+
+    <div class="card">
+
+        <h1>✔ Submission Successful</h1>
+
+        <p class="success-msg">
+            Your patient intake form has been received and will be reviewed by our healthcare professionals.
+        </p>
+
+        <div class="patient-id-info">
+            <p><strong>Patient ID:</strong> <span id="patientIdDisplay">-</span></p>
+            <p>Please save your Patient ID for future reference.</p>
+        </div>
+
+        <p class="info-text">
+            You will be contacted shortly. In the meantime, you can return to the home page.
+        </p>
+
+        <a href="index.html" class="btn btn-primary">Return to Home</a>
+
+    </div>
+
+    <script>
+        // Display patient ID from sessionStorage if available
+        window.addEventListener('DOMContentLoaded', function () {
+            const patientId = sessionStorage.getItem('patientId');
+            if (patientId) {
+                document.getElementById('patientIdDisplay').textContent = patientId;
+                // Clear from session after displaying
+                sessionStorage.removeItem('patientId');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

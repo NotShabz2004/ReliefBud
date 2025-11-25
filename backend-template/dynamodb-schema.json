@@ -1,0 +1,63 @@
+{
+    "TableName": "PatientIntake",
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "patientId",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "createdAt",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "preferredDepartment",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "receivedAtEpoch",
+            "AttributeType": "N"
+        }
+    ],
+    "KeySchema": [
+        {
+            "AttributeName": "patientId",
+            "KeyType": "HASH"
+        },
+        {
+            "AttributeName": "createdAt",
+            "KeyType": "RANGE"
+        }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "GlobalSecondaryIndexes": [
+        {
+            "IndexName": "preferredDepartment-receivedAtEpoch-index",
+            "KeySchema": [
+                {
+                    "AttributeName": "preferredDepartment",
+                    "KeyType": "HASH"
+                },
+                {
+                    "AttributeName": "receivedAtEpoch",
+                    "KeyType": "RANGE"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            }
+        }
+    ],
+    "StreamSpecification": {
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+    },
+    "Tags": [
+        {
+            "Key": "Application",
+            "Value": "ReliefBud"
+        },
+        {
+            "Key": "Environment",
+            "Value": "production"
+        }
+    ]
+}

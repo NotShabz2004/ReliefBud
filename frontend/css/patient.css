@@ -1,0 +1,195 @@
+/* Patient Forms Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 120px;
+    height: auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.success-msg {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #c3e6cb;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 16px;
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0da5c0;
+    box-shadow: 0 0 0 3px rgba(13, 165, 192, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Button Styles */
+.role-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.role-btn.teal {
+    background-color: #0da5c0;
+    color: white;
+}
+
+.role-btn.teal:hover {
+    background-color: #0b8fa8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(13, 165, 192, 0.4);
+}
+
+.role-btn.teal:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.role-btn+.role-btn {
+    margin-left: 10px;
+}
+
+/* Links */
+a {
+    color: #0da5c0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.signup-link,
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.info-text {
+    color: #888;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.patient-id-info {
+    background-color: #f0f8ff;
+    border: 1px solid #0da5c0;
+    border-radius: 6px;
+    padding: 16px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.patient-id-info p {
+    margin: 8px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.patient-id-info strong {
+    color: #0da5c0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .card {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .role-btn+.role-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .role-btn {
+        width: 100%;
+    }
+}
